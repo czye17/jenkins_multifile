@@ -3,13 +3,12 @@ pipeline {
 
     stages {
         stage('Build') {
-            
+
             steps {
                 sh 'ls'
 
                 script {
-                    def rootDir = pwd()
-                    def example = load "${rootDir}@script/hello.Groovy "
+                    def example = load "hello.Groovy"
                     example.hello()
                 }
             }
